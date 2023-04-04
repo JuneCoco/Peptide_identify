@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<settings>
+  <search_call>MSAmanda.exe -s /home/wjl/PRIDE/PXD009064/mzml -d /home/wjl/PRIDE/PXD009064/EL4_4__EL4PP97_id_139.fasta -e settings.xml -f 1 -o /home/wjl/PRIDE/PXD009064/amada </search_call>
+  <version>2.0.0.19921</version>
+  <spectrumfiles>
+    <spectrumfile>/home/wjl/PRIDE/PXD009064/mzml/EL4_4K_R1_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/home/wjl/PRIDE/PXD009064/mzml/EL4_4K_R2_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/home/wjl/PRIDE/PXD009064/mzml/EL4_4K_R3_250M_280214_1.mzML</spectrumfile>
+  </spectrumfiles>
+  <databasefiles>
+    <databasefile>/home/wjl/PRIDE/PXD009064/EL4_4__EL4PP97_id_139.fasta</databasefile>
+  </databasefiles>
+
+  <search_call>MSAmanda.exe -s /mnt/Data/PXD009064/mzml_index -d /mnt/Data/PXD009064/EL4_4__EL4PP97_id_139.fasta -e settings.xml -f 1 -o /mnt/Data/PXD009064/amanda </search_call>
+  <version>2.0.0.18350</version>
+  <spectrumfiles>
+    <spectrumfile>/mnt/Data/PXD009064/mzml_index/EL4_4K_R1_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/mnt/Data/PXD009064/mzml_index/EL4_4K_R2_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/mnt/Data/PXD009064/mzml_index/EL4_4K_R3_250M_280214_1.mzML</spectrumfile>
+  </spectrumfiles>
+  <databasefiles>
+    <databasefile>/mnt/Data/PXD009064/EL4_4__EL4PP97_id_139.fasta</databasefile>
+  </databasefiles>
+
+  <search_settings>
+    <!--valid values for specificity are: "FULL", "SEMI", "SEMI(C)", "SEMI(N)" -->
+    <enzyme specificity="FULL">No-Enzyme</enzyme>
+    <missed_cleavages>3</missed_cleavages>
+    <modifications>
+      <!-- <modification [fix="true|false"] [nterm="true|false"] [cterm="true|false"] [protein="true|false"] [delta_mass="+XX.XX"]>Name[(AA,AA)] [maxoccurences="1"]</modification>-->
+      <!-- If [nterm="true"] or [cterm="true"] is selected [maxoccurences] must be set to 1 -->
+      <!-- [maxoccurences] must be less or equal than <MaxNoModifs> -->
+      <!-- [modification fix="true" nterm="false" cterm="false" maxoccurences="1"]Carbamidomethyl(C)</modification>-->
+      <modification delta_mass="15.9949">Oxidation(M)</modification>
+	  <modification>Deamidation(N)</modification>
+	  <modification>Deamidation(Q)</modification>
+      <!--modification nterm="true">Acetyl</modification-->
+      <!--modification>Phospho(S,T,Y)</modification-->
+      <!--modification delta_mass="15.9999">MyOwnModif(M)</modification-->
+      <!--<modification fix="false" nterm="false" cterm="false"> Label:13C(6)15N(2)(K)</modification>-->
+      <!--<modification>Label:13C(6)15N(2)(K)</modification>-->
+	  <!--<modification>Label:13C(6)15N(4)(R)</modification>-->
+    </modifications>
+    <instrument>b, y</instrument>
+    <!-- <ms1_tol unit="Da|ppm|mmu">VALUE</ms1_tol>  default: "5 ppm"-->
+    <ms1_tol unit="ppm">5</ms1_tol>
+    <!-- <ms2_tol unit="Da|ppm|mmu">VALUE</ms1_tol>  default: "0.02 Da"-->
+    <ms2_tol unit="Da">0.02</ms2_tol>
+    <!-- min 1 max 999 default 5-->
+    <max_rank>5</max_rank>
+    <generate_decoy>true</generate_decoy>
+    <PerformDeisotoping>true</PerformDeisotoping>
+    <!-- Maximum number of occurrences of the same modification on a peptide. (min 0, max 10) -->
+    <MaxNoModifs>3</MaxNoModifs>
+    <!-- Maximum number of dynamic modifications per peptide. (min 0, max 10) -->
+    <MaxNoDynModifs>4</MaxNoDynModifs>
+    <!-- Maximum number of potential modification sites for a specific modification per peptide. Peptides with a higher number are discarded, due to a too high complexity. (min 0, max 20) -->
+    <MaxNumberModSites>6</MaxNumberModSites>
+    <!-- Maximum number of same neutral losses per peptide regarding water and ammonia losses. (min 0, max 5) -->
+    <MaxNumberNeutralLoss>1</MaxNumberNeutralLoss>
+    <!-- Maximum number of same neutral losses per peptide regarding modification specific losses. (min 0, max 5) -->
+    <MaxNumberNeutralLossModifications>2</MaxNumberNeutralLossModifications>
+    <!-- Only peptides with a certain minimum length are matched. (min 0, max 20)--> 
+    <MinimumPepLength>6</MinimumPepLength>
+    <!-- Only peptides with a certain maximum length are matched. (min 0, max 60)--> 
+    <MaximumPepLength>30</MaximumPepLength>
+    <!-- false -> combine ranks for target and decoy, true -> own rankings for target and decoy --> 
+    <ReportBothBestHitsForTD>false</ReportBothBestHitsForTD>
+    <!-- new settings -->
+    <!-- Maximum charge state of calculated fragment ions. Higher charged ions are only calculated up to precursor charge - 1, i.e., for a 3+ peptide only 1+ and 2+ fragment ions are calculated, even if “4+” is selected. (default +2) -->
+    <!-- possible values: +2; +3; +4; Precursor - 1 -->
+    <MaxAllowedChargeState>+2</MaxAllowedChargeState>
+     <!--Minimum value for number of selected peaks within peak picking window. (min 1, max 30)-->
+    <MinimumPeakDepth>1</MinimumPeakDepth>
+     <!--Maximum value for number of selected peaks within peak picking window. (min 1, max 30)-->
+    <MaximumPeakDepth>10</MaximumPeakDepth>
+  </search_settings>
+
+
+  <basic_settings>
+    <instruments_file>Instruments.xml</instruments_file>
+    <unimod_file>unimod.xml</unimod_file>
+    <enzyme_file>enzymes.xml</enzyme_file>
+    <!--new files for mzid-->
+    <unimod_obo_file>unimod.obo</unimod_obo_file>
+    <psims_obo_file>psi-ms.obo</psims_obo_file>
+    <monoisotopic>true</monoisotopic>
+    <considered_charges>2+,3+,4+</considered_charges>
+    <!-- default true -> considered charges are combined in one result -->
+    <combine_considered_charges>true</combine_considered_charges>    
+    <!-- Maximal number of proteins loaded into memory; bigger values need more memory. (min 1000, max 500000) -->
+    <LoadedProteinsAtOnce>100000</LoadedProteinsAtOnce>
+    <!-- The number of spectra that shall be processed at a time; bigger values need more memory. (min 1000, max 50000) -->
+    <LoadedSpectraAtOnce>8000</LoadedSpectraAtOnce>
+    <!-- "DEFAULT" = default path; change for other path-->
+    <data_folder>DEFAULT</data_folder>
+  </basic_settings>
+</settings>
