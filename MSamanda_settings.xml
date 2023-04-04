@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <settings>
-  <search_call>MSAmanda.exe -s /home/wjl/PRIDE/PXD009064/mzml -d /home/wjl/PRIDE/PXD009064/EL4_4__EL4PP97_id_139.fasta -e settings.xml -f 1 -o /home/wjl/PRIDE/PXD009064/amada </search_call>
-  <version>2.0.0.19921</version>
-  <spectrumfiles>
-    <spectrumfile>/home/wjl/PRIDE/PXD009064/mzml/EL4_4K_R1_250M_280214_1.mzML</spectrumfile>
-    <spectrumfile>/home/wjl/PRIDE/PXD009064/mzml/EL4_4K_R2_250M_280214_1.mzML</spectrumfile>
-    <spectrumfile>/home/wjl/PRIDE/PXD009064/mzml/EL4_4K_R3_250M_280214_1.mzML</spectrumfile>
-  </spectrumfiles>
-  <databasefiles>
-    <databasefile>/home/wjl/PRIDE/PXD009064/EL4_4__EL4PP97_id_139.fasta</databasefile>
-  </databasefiles>
-
-  <search_call>MSAmanda.exe -s /mnt/Data/PXD009064/mzml_index -d /mnt/Data/PXD009064/EL4_4__EL4PP97_id_139.fasta -e settings.xml -f 1 -o /mnt/Data/PXD009064/amanda </search_call>
+  <search_call>MSAmanda.exe -s /mnt/mzml_index -d /mnt/EL4_4__EL4PP97_id_139.fasta -e settings.xml -f 1 -o /mnt/amanda </search_call>
   <version>2.0.0.18350</version>
   <spectrumfiles>
-    <spectrumfile>/mnt/Data/PXD009064/mzml_index/EL4_4K_R1_250M_280214_1.mzML</spectrumfile>
-    <spectrumfile>/mnt/Data/PXD009064/mzml_index/EL4_4K_R2_250M_280214_1.mzML</spectrumfile>
-    <spectrumfile>/mnt/Data/PXD009064/mzml_index/EL4_4K_R3_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/mnt/mzml_index/EL4_4K_R1_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/mnt/mzml_index/EL4_4K_R2_250M_280214_1.mzML</spectrumfile>
+    <spectrumfile>/mnt/mzml_index/EL4_4K_R3_250M_280214_1.mzML</spectrumfile>
   </spectrumfiles>
   <databasefiles>
-    <databasefile>/mnt/Data/PXD009064/EL4_4__EL4PP97_id_139.fasta</databasefile>
+    <databasefile>/mnt/database/EL4_4__EL4PP97_id_139.fasta</databasefile>
   </databasefiles>
 
   <search_settings>
